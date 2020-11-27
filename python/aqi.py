@@ -134,12 +134,13 @@ if __name__ == "__main__":
 
         # append new values
         jsonrow = {'pm25': values[0], 'pm10': values[1], 'time': time.strftime("%d.%m.%Y %H:%M:%S")}
-        data.append(jsonrow)
+        # data.append(jsonrow)
 
         # save it
         with open(JSON_FILE, 'w') as outfile:
-            json.dump(data, outfile)
-
+        #    json.dump(data, outfile)
+            json.dump(jsonrow, outfile)
+            
         if MQTT_HOST != '':
             pub_mqtt(jsonrow)
             
