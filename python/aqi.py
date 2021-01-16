@@ -138,9 +138,8 @@ if __name__ == "__main__":
 
         # save it
         with open(JSON_FILE, 'w') as outfile:
-        #    json.dump(data, outfile)
             json.dump(jsonrow, outfile)
-            
+
         if MQTT_HOST != '':
             pub_mqtt(jsonrow)
             
